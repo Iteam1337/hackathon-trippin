@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:trippin_app/ui/friend.dart';
+import 'package:trippin_app/ui/friend_item.dart';
+import 'package:trippin_app/ui/section_title.dart';
 
 class FriendsList extends StatelessWidget {
   final String title;
-  final List<Friend> friends;
+  final List<FriendItem> friends;
   final String buttonText;
 
-  FriendsList(this.title, this.friends, this.buttonText);
+  FriendsList({
+    this.title,
+    this.friends,
+    this.buttonText,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -18,17 +23,7 @@ class FriendsList extends StatelessWidget {
           new Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              new Expanded(
-                child: new Text(
-                  title,
-                  style: new TextStyle(
-                    color: Colors.black45,
-                    fontSize: 21.0,
-                    fontWeight: FontWeight.w400,
-                  ),
-                  textAlign: TextAlign.left,
-                ),
-              ),
+              new Expanded(child: new SectionTitle(title: title)),
               new FlatButton(
                 color: new Color(0x331498d6),
                 onPressed: () => 'Skiing',
@@ -42,13 +37,7 @@ class FriendsList extends StatelessWidget {
               )
             ],
           ),
-          new Container(height: 10.0),
-          new Container(
-            height: 2.0,
-            width: 40.0,
-            color: new Color(0xAA1498d6),
-          ),
-          new Container(height: 8.0),
+          new Container(height: 16.0),
           new Row(
             children: friends,
           ),

@@ -11,17 +11,17 @@ class LandingPage extends StatefulWidget {
 
 class LandingPageState extends State<LandingPage>
     with SingleTickerProviderStateMixin {
-  TabController controller;
+  TabController _tabController;
 
   @override
   void initState() {
     super.initState();
-    controller = new TabController(vsync: this, length: 4);
+    _tabController = new TabController(vsync: this, length: 4);
   }
 
   @override
   void dispose() {
-    controller.dispose();
+    _tabController.dispose();
     super.dispose();
   }
 
@@ -38,7 +38,7 @@ class LandingPageState extends State<LandingPage>
       ),
       bottomNavigationBar: new Material(
         color: new Color(0xAA1498d6),
-        child: new TabBar(controller: controller, tabs: <Tab>[
+        child: new TabBar(controller: _tabController, tabs: <Tab>[
           new Tab(icon: new Icon(Icons.home)),
           new Tab(icon: new Icon(Icons.explore)),
           new Tab(icon: new Icon(Icons.people)),
@@ -46,7 +46,7 @@ class LandingPageState extends State<LandingPage>
         ]),
       ),
       body: new TabBarView(
-        controller: controller,
+        controller: _tabController,
         children: <Widget>[
           new StartPage(),
           new ExplorePage(),

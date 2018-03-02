@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 class ExperienceImage extends StatelessWidget {
   final String image;
 
-  ExperienceImage(this.image);
+  ExperienceImage({
+    this.image,
+  });
 
   @override
   Widget build(BuildContext context) {

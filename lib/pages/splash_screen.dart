@@ -41,9 +41,7 @@ class SplashScreenState extends State<SplashScreen>
       child: new InkWell(
         onTap: () => Navigator.of(context).push(
               new MaterialPageRoute(
-                builder: (BuildContext context) {
-                  return new LandingPage();
-                },
+                builder: (_) => new LandingPage(),
               ),
             ),
         child: new Column(

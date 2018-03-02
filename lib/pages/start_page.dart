@@ -22,10 +22,16 @@ class StartPage extends StatelessWidget {
             padding: new EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
             child: new Column(
               children: <Widget>[
-                new TravelBuddy('98b50512dfeaea8a4ba9d4e3ba20eced', 'Nisse',
-                    'Skiing in Canada', 'Now'),
-                new TravelBuddy('df2dc89db476f82b895b762e638b6d22', 'Martin',
-                    'Surfing in Hawaii', '32 min ago'),
+                new TravelBuddy(
+                  name: 'nils',
+                  location: 'Skiing in Canada',
+                  time: 'Now',
+                ),
+                new TravelBuddy(
+                  name: 'martin',
+                  location: 'Surfing in Hawaii',
+                  time: '32 min ago',
+                ),
                 new Container(
                   height: 12.0,
                 ),
@@ -37,17 +43,17 @@ class StartPage extends StatelessWidget {
                   height: 6.0,
                 ),
                 new ExperienceButton(
-                  'Experience with friends',
-                  'Sharing is caring',
-                  Icons.people,
+                  title: 'Experience with friends',
+                  subtitle: 'Sharing is caring',
+                  icon: Icons.people,
                 ),
                 new Container(
                   height: 6.0,
                 ),
                 new ExperienceButton(
-                  'Experience now!',
-                  'Find your destination',
-                  Icons.explore,
+                  title: 'Experience now!',
+                  subtitle: 'Find your destination',
+                  icon: Icons.explore,
                 ),
               ],
             ),

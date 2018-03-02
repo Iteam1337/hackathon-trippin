@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:trippin_app/ui/friend.dart';
+import 'package:trippin_app/ui/friend_item.dart';
 import 'package:trippin_app/ui/planned_experience.dart';
+import 'package:trippin_app/ui/section_title.dart';
 
 class ProfilePage extends StatelessWidget {
   @override
@@ -31,64 +32,37 @@ class ProfilePage extends StatelessWidget {
                 ),
               ),
               new Container(height: 32.0),
-              new Text(
-                "You're about to experience",
-                style: new TextStyle(
-                  color: Colors.black45,
-                  fontSize: 21.0,
-                  fontWeight: FontWeight.w400,
-                ),
-                textAlign: TextAlign.left,
-              ),
-              new Container(height: 10.0),
-              new Container(
-                height: 2.0,
-                width: 40.0,
-                color: new Color(0xAA1498d6),
-              ),
+              new SectionTitle(title: "You're about to experience"),
             ],
           ),
           new PlannedExperience(
-            'Whistler, Canada',
-            [
-              new Friend('98b50512dfeaea8a4ba9d4e3ba20eced', ''),
-              new Friend('df2dc89db476f82b895b762e638b6d22', ''),
+            location: 'Skiing in Whistler',
+            friends: [
+              new FriendItem(name: 'nils', hideName: true),
+              new FriendItem(name: 'martin', hideName: true),
             ],
-            '2018-03-03',
-            'assets/images/bg_1.jpeg',
+            time: '2018-03-03',
+            image: 'bg_1',
           ),
           new PlannedExperience(
-            'Fishing in Alaska',
-            [new Friend('98b50512dfeaea8a4ba9d4e3ba20eced', '')],
-            '2018-03-10',
-            'assets/images/fishing.jpeg',
+            location: 'Fishing in Alaska',
+            friends: [
+              new FriendItem(name: 'rasmus', hideName: true),
+            ],
+            time: '2018-03-10',
+            image: 'fishing',
           ),
           new Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               new Container(height: 16.0),
-              new Text(
-                'Past experiences',
-                style: new TextStyle(
-                  color: Colors.black45,
-                  fontSize: 21.0,
-                  fontWeight: FontWeight.w400,
-                ),
-                textAlign: TextAlign.left,
-              ),
-              new Container(height: 10.0),
-              new Container(
-                height: 2.0,
-                width: 40.0,
-                color: new Color(0xAA1498d6),
-              ),
+              new SectionTitle(title: 'Past experiences'),
             ],
           ),
           new PlannedExperience(
-            'Desert safari in Egypt',
-            [],
-            '2018-03-10',
-            'assets/images/bg_2.jpeg',
+            location: 'Desert safari in Egypt',
+            time: '2018-03-10',
+            image: 'bg_2',
           ),
         ],
       ),

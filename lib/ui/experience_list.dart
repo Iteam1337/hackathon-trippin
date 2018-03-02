@@ -1,10 +1,14 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:trippin_app/ui/experience_image.dart';
+import 'package:trippin_app/ui/section_title.dart';
 
 class ExperienceList extends StatelessWidget {
   final String title;
 
-  ExperienceList(this.title);
+  ExperienceList({
+    @required this.title,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -18,36 +22,13 @@ class ExperienceList extends StatelessWidget {
     images.shuffle();
 
     List<Widget> experienceImages =
-        images.map((asset) => new ExperienceImage(asset)).toList();
+        images.map((asset) => new ExperienceImage(image: asset)).toList();
 
     return new Column(
       children: <Widget>[
         new Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16.0),
-          child: new Row(
-            children: <Widget>[
-              new Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  new Text(
-                    title,
-                    style: new TextStyle(
-                      color: Colors.black45,
-                      fontSize: 21.0,
-                      fontWeight: FontWeight.w400,
-                    ),
-                    textAlign: TextAlign.left,
-                  ),
-                  new Container(height: 10.0),
-                  new Container(
-                    height: 2.0,
-                    width: 40.0,
-                    color: new Color(0xAA1498d6),
-                  ),
-                ],
-              )
-            ],
-          ),
+          child: new SectionTitle(title: title),
         ),
         new Container(height: 10.0),
         new Container(

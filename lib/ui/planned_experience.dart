@@ -1,13 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:trippin_app/ui/friend.dart';
+import 'package:trippin_app/ui/friend_item.dart';
 
 class PlannedExperience extends StatelessWidget {
   final String location;
   final String image;
-  final List<Friend> friends;
+  final List<FriendItem> friends;
   final String time;
 
-  PlannedExperience(this.location, this.friends, this.time, this.image);
+  PlannedExperience({
+    this.location,
+    this.friends = const [],
+    this.time,
+    this.image,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +21,7 @@ class PlannedExperience extends StatelessWidget {
       child: new Row(
         children: <Widget>[
           new Image.asset(
-            image,
+            'assets/images/$image.jpeg',
             height: 75.0,
           ),
           new Padding(
@@ -41,7 +46,7 @@ class PlannedExperience extends StatelessWidget {
                   ),
                 ),
                 new Container(height: 6.0),
-                new Row(children: friends),
+                new Row(children: friends.toList()),
               ],
             ),
           )

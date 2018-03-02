@@ -5,7 +5,11 @@ class ExperienceButton extends StatelessWidget {
   final String subtitle;
   final IconData icon;
 
-  ExperienceButton(this.title, this.subtitle, this.icon);
+  ExperienceButton({
+    this.title,
+    this.subtitle,
+    this.icon,
+  });
 
   @override
   Widget build(BuildContext context) {

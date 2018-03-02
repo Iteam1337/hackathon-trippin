@@ -9,9 +9,9 @@ class ExplorePage extends StatelessWidget {
       padding: new EdgeInsets.only(top: 20.0),
       child: new Column(
         children: <Widget>[
-          new ExperienceList('Tired of winter?'),
-          new ExperienceList('I want more snow!'),
-          new ExperienceList('Gimme jungle!'),
+          new ExperienceList(title: 'Tired of winter?'),
+          new ExperienceList(title: 'I want more snow!'),
+          new ExperienceList(title: 'Gimme jungle!'),
         ],
       ),
     );

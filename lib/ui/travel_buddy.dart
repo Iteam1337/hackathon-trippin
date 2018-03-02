@@ -1,24 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:trippin_app/models/friend.dart';
 
 class TravelBuddy extends StatelessWidget {
-  final String gravatar;
   final String name;
   final String location;
   final String time;
 
-  TravelBuddy(this.gravatar, this.name, this.location, this.time);
+  TravelBuddy({
+    this.name,
+    this.location,
+    this.time,
+  });
 
   @override
   Widget build(BuildContext context) {
+    final Friend friend = new Friend(name);
+
     return new ListTile(
       dense: true,
       leading: new CircleAvatar(
-        backgroundImage: new NetworkImage(
-          'https://www.gravatar.com/avatar/$gravatar.jpg?s=400',
-        ),
+        backgroundImage: new NetworkImage(friend.gravatarId),
       ),
       title: new Text(
-        name,
+        friend.realName,
         style: new TextStyle(fontWeight: FontWeight.bold),
       ),
       subtitle: new Text(location),
