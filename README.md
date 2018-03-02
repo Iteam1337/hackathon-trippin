@@ -1,6 +1,6 @@
-# trippin_app
+# Trippin
 
-A new Flutter project.
+This project was built during **Future Hackathon** at Iteam (2018-03-02).
 
 ## Getting Started
 
